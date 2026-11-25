@@ -13,14 +13,14 @@ export default function A11yBar() {
   }, [on]);
   const readPage = () => { const sel = window.getSelection()?.toString(); speak(sel || document.querySelector('main')?.innerText.slice(0, 1500) || ''); };
   return (
-    <div className="mt-4 rounded-xl bg-slate-800 p-3">
+    <div className="mt-4 rounded-xl bg-brand-800 p-3">
       <div className="text-[11px] font-semibold text-slate-300 mb-2">♿ Accessibility</div>
       <div className="flex gap-1 flex-wrap">
         {MODES.map(([cls, icon, label]) => (
-          <button key={cls} title={label} aria-label={label} aria-pressed={!!on[cls]} onClick={() => setOn({ ...on, [cls]: !on[cls] })} className={`px-2 py-1 rounded text-sm font-bold ${on[cls] ? 'bg-amber-400 text-black' : 'bg-slate-700'}`}>{icon}</button>
+          <button key={cls} title={label} aria-label={label} aria-pressed={!!on[cls]} onClick={() => setOn({ ...on, [cls]: !on[cls] })} className={`px-2 py-1 rounded text-sm font-bold ${on[cls] ? 'bg-accent-500 text-white ring-2 ring-white' : 'bg-brand-900'}`}>{icon}</button>
         ))}
-        <button title="Read page or selected text aloud" aria-label="Read aloud" onClick={readPage} className="px-2 py-1 rounded text-sm bg-slate-700">🔊</button>
-        <button title="Stop reading" aria-label="Stop reading" onClick={() => window.speechSynthesis?.cancel()} className="px-2 py-1 rounded text-sm bg-slate-700">⏹</button>
+        <button title="Read page or selected text aloud" aria-label="Read aloud" onClick={readPage} className="px-2 py-1 rounded text-sm bg-brand-900">🔊</button>
+        <button title="Stop reading" aria-label="Stop reading" onClick={() => window.speechSynthesis?.cancel()} className="px-2 py-1 rounded text-sm bg-brand-900">⏹</button>
       </div>
     </div>
   );

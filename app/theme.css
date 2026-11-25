@@ -1,0 +1,23 @@
+/* =====================================================================
+   DONSWIFT BRAND THEME (from the Donswift letterhead): change colours HERE only.
+   Values are "R G B" (no commas).
+   Red      #E72033  -> brand-500
+   Charcoal #231F20  -> brand-900 (sidebar, headings)
+   Footer gradient: maroon #590C14 -> red #E41D30 (see .brand-gradient)
+   ===================================================================== */
+:root {
+  --brand-50: 253 236 238;
+  --brand-100: 250 210 214;
+  --brand-200: 244 166 173;
+  --brand-300: 238 112 124;
+  --brand-400: 234 70 86;
+  --brand-500: 231 32 51;    /* Donswift red #E72033 */
+  --brand-600: 200 25 43;    /* buttons (darker red for text contrast) */
+  --brand-700: 160 18 32;
+  --brand-800: 58 52 53;     /* light charcoal */
+  --brand-900: 35 31 32;     /* Donswift charcoal #231F20 */
+  --accent-400: 234 70 86;
+  --accent-500: 228 29 48;   /* #E41D30 */
+  --accent-600: 89 12 20;    /* maroon #590C14 */
+}
+.brand-gradient { background: linear-gradient(90deg, #590C14 0%, #E41D30 100%); }

@@ -1,7 +1,7 @@
 'use client';
 import { Pill } from './ui';
 
-const LEVEL = { must: 'bg-red-100 text-red-700', core: 'bg-indigo-100 text-indigo-700', nice: 'bg-slate-100 text-slate-600', credential: 'bg-amber-100 text-amber-700' };
+const LEVEL = { must: 'bg-red-100 text-red-700', core: 'bg-brand-100 text-brand-700', nice: 'bg-slate-100 text-slate-600', credential: 'bg-amber-100 text-amber-700' };
 export default function Blueprint({ bp, editable, onChange }) {
   return (
     <div className="space-y-4">
@@ -17,7 +17,7 @@ export default function Blueprint({ bp, editable, onChange }) {
                   <select className="input !w-16 !py-1" value={s.weight} onChange={(e) => onChange({ ...bp, skills: bp.skills.map((x, j) => (j === i ? { ...x, weight: Number(e.target.value) } : x)) })}>{[1, 2, 3].map((w) => <option key={w}>{w}</option>)}</select>
                   <button className="text-red-500 text-xs" onClick={() => onChange({ ...bp, skills: bp.skills.filter((_, j) => j !== i) })}>remove</button>
                 </>
-              ) : <span className="text-indigo-400">{'●'.repeat(s.weight)}</span>}
+              ) : <span className="text-brand-400">{'●'.repeat(s.weight)}</span>}
             </div>
           ))}
         </div>

@@ -33,7 +33,7 @@ export const BandBadge = ({ band }) => <span className={`px-2 py-0.5 rounded-ful
 export const GemBadge = () => <span className="px-2 py-0.5 rounded-full text-xs font-bold bg-fuchsia-100 text-fuchsia-700 ring-1 ring-fuchsia-300">💎 Hidden Gem</span>;
 export const Pill = ({ children, color = 'bg-slate-100 text-slate-700' }) => <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${color}`}>{children}</span>;
 
-export function Score({ value, label, color = 'bg-indigo-500' }) {
+export function Score({ value, label, color = 'bg-brand-500' }) {
   return (
     <div className="min-w-[90px]">
       <div className="flex justify-between text-[11px] text-slate-500"><span>{label}</span><span className="font-semibold text-slate-700">{value === null || value === undefined ? '—' : value + '%'}</span></div>

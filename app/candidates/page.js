@@ -11,7 +11,7 @@ export default function Candidates() {
       <div className="flex justify-between items-center"><h1>Talent Pool</h1><Link href="/apply" className="btn-primary">+ Add candidate</Link></div>
       <div className="grid md:grid-cols-2 gap-4">
         {data.map((c) => (
-          <Link key={c.id} href={`/candidates/${c.id}`} className={`card hover:ring-2 ring-indigo-400 ${c.gem ? 'ring-2 ring-fuchsia-300' : ''}`}>
+          <Link key={c.id} href={`/candidates/${c.id}`} className={`card hover:ring-2 ring-brand-400 ${c.gem ? 'ring-2 ring-fuchsia-300' : ''}`}>
             <div className="flex justify-between items-start">
               <div><div className="font-bold">{who(c, blind)}</div><div className="text-xs text-slate-500">{c.ref} · {blind ? 'identity hidden' : c.school} · {c.education} · via {c.channel}</div></div>
               <div className="flex flex-col items-end gap-1">{c.gem && <GemBadge />}<AdjustBadge c={c} blind={blind} /></div>

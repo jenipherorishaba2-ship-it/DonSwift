@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useFetch } from '@/components/ui';
 import { MicButton, SpeakButton } from '@/components/Voice';
+import Logo from '@/components/Logo';
 
 const NEEDS = ['Deaf / hard of hearing: Ugandan Sign Language interpreter at interview', 'Blind / low vision: screen reader or large print', 'Wheelchair user: step-free interview venue', 'Need extra time for tests', 'Contact by text/WhatsApp only'];
 const COMM = ['Phone call', 'Text / WhatsApp', 'Email', 'Video call with sign language'];
@@ -25,14 +26,14 @@ export default function Apply() {
   if (done) return (
     <div className="card max-w-xl">
       <h1>🎉 Thank you, {f.full_name.split(' ')[0]}!</h1>
-      <p className="mt-2">Your reference number is <b className="text-indigo-600 text-xl">{done.ref}</b>. Keep it to check your status any time with the assistant.</p>
+      <p className="mt-2">Your reference number is <b className="text-brand-600 text-xl">{done.ref}</b>. Keep it to check your status any time with the assistant.</p>
       <p className="text-sm text-slate-500 mt-2">We found skills in your story and matched you against every open job, not only the one you picked.</p>
       <div className="flex gap-2 mt-4"><Link className="btn-primary" href={`/candidates/${done.id}`}>See my skills profile</Link><Link className="btn-ghost" href="/challenge">Take the skills challenge</Link></div>
     </div>
   );
   return (
     <div className="max-w-3xl space-y-4">
-      <h1>Apply to Donswift</h1>
+      <div className="flex items-center gap-4"><Logo size="lg" /><h1>Apply to Donswift</h1></div>
       <p className="text-slate-500 text-sm">No CV? No problem. Tell us what you have done in your own words. Selling in a market, riding a boda, leading a church group, farming: it all counts.</p>
       <div className="flex gap-2">
         <button onClick={() => setMode('story')} className={mode === 'story' ? 'btn-primary' : 'btn-ghost'}>🗣 Tell my story (no CV)</button>

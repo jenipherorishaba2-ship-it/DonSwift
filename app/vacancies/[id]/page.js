@@ -16,7 +16,7 @@ export default function VacancyPage({ params }) {
     <div className="space-y-6">
       <div className="flex items-start justify-between">
         <div>
-          <Link href="/vacancies" className="text-xs text-indigo-600">← Vacancies</Link>
+          <Link href="/vacancies" className="text-xs text-brand-600">← Vacancies</Link>
           <h1>{v.title}</h1>
           <div className="text-sm text-slate-500">{v.client} · {v.location} · {v.positions} position(s)</div>
         </div>
@@ -31,7 +31,7 @@ export default function VacancyPage({ params }) {
         <div className="lg:col-span-2 space-y-3">
           <div className="flex items-center justify-between">
             <h2 className="font-bold">Ranked across the WHOLE talent pool</h2>
-            <div className="flex gap-1 text-xs">{[['all', 'Everyone'], ['applied', 'Applied here'], ['other', 'Discovered from other roles']].map(([k, l]) => <button key={k} onClick={() => setFilter(k)} className={`px-2 py-1 rounded ${filter === k ? 'bg-indigo-600 text-white' : 'bg-white border'}`}>{l}</button>)}</div>
+            <div className="flex gap-1 text-xs">{[['all', 'Everyone'], ['applied', 'Applied here'], ['other', 'Discovered from other roles']].map(([k, l]) => <button key={k} onClick={() => setFilter(k)} className={`px-2 py-1 rounded ${filter === k ? 'bg-brand-600 text-white' : 'bg-white border'}`}>{l}</button>)}</div>
           </div>
           {list.map((r, i) => (
             <div key={r.candidateId} className={`card ${r.hiddenGem ? 'ring-2 ring-fuchsia-300' : ''}`}>
@@ -44,7 +44,7 @@ export default function VacancyPage({ params }) {
                     {r.hiddenGem && <GemBadge />}
                     <AdjustBadge c={r.candidate} blind={blind} />
                     {r.potentialGem && <Pill color="bg-sky-100 text-sky-700">✨ Potential: invite to challenge</Pill>}
-                    {!r.appliedTo.includes(v.title) && <Pill color="bg-indigo-50 text-indigo-700">Applied for: {r.appliedTo.join(', ') || '—'}</Pill>}
+                    {!r.appliedTo.includes(v.title) && <Pill color="bg-brand-50 text-brand-700">Applied for: {r.appliedTo.join(', ') || '—'}</Pill>}
                     {r.application && <Pill color="bg-slate-800 text-white">{r.application.status}</Pill>}
                   </div>
                   <div className="text-xs text-slate-500 mt-0.5">{blind ? 'Identity hidden' : `${r.candidate.gender}, ${r.candidate.age} · ${r.candidate.school}`} · {r.candidate.education} · via {r.candidate.channel}</div>
@@ -54,7 +54,7 @@ export default function VacancyPage({ params }) {
                   <DecisionBox candidateId={r.candidateId} vacancyId={v.id} aiBand={r.band} onDone={reload} />
                 </div>
                 <div className="w-40 space-y-2">
-                  <div className="text-center"><div className="text-3xl font-extrabold text-indigo-600">{r.overall}%</div><div className="text-[10px] uppercase text-slate-400">TalentLens match</div></div>
+                  <div className="text-center"><div className="text-3xl font-extrabold text-brand-600">{r.overall}%</div><div className="text-[10px] uppercase text-slate-400">TalentLens match</div></div>
                   <Score label="Skill fit" value={r.skillFit} />
                   <Score label="Challenge" value={r.challenge} color="bg-fuchsia-500" />
                   <Score label="Keyword CV filter" value={r.cv} color="bg-slate-400" />

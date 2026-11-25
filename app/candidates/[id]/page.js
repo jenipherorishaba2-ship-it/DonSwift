@@ -13,7 +13,7 @@ export default function CandidatePage({ params }) {
   return (
     <div className="space-y-6">
       <div>
-        <Link href="/candidates" className="text-xs text-indigo-600">← Talent pool</Link>
+        <Link href="/candidates" className="text-xs text-brand-600">← Talent pool</Link>
         <h1>{who(c, blind)}</h1>
         <div className="text-sm text-slate-500">{c.ref} · {blind ? 'Gender, age, school and phone hidden' : `${c.gender}, ${c.age} · ${c.school} · ${c.phone}`} · {c.education} · {c.years_experience} yrs · applied via {c.channel}</div>
         {c.accommodations && <div className="mt-2 flex items-center gap-2"><AdjustBadge c={c} blind={blind} /><span className="text-xs text-slate-500">Used only to plan interviews and contact. Never affects the match score.</span></div>}
@@ -34,13 +34,13 @@ export default function CandidatePage({ params }) {
             <div key={m.vacancyId} className={`card ${m.hiddenGem ? 'ring-2 ring-fuchsia-300' : ''}`}>
               <div className="flex gap-4">
                 <div className="flex-1">
-                  <div className="flex flex-wrap gap-2 items-center"><Link href={`/vacancies/${m.vacancyId}`} className="font-bold hover:underline">{m.vacancy}</Link><BandBadge band={m.band} />{m.hiddenGem && <GemBadge />}{m.application ? <Pill color="bg-slate-800 text-white">{m.application.source === 'applied' ? 'Applied' : 'Matched by recruiter'} · {m.application.status}</Pill> : <Pill color="bg-indigo-50 text-indigo-700">Did not apply</Pill>}</div>
+                  <div className="flex flex-wrap gap-2 items-center"><Link href={`/vacancies/${m.vacancyId}`} className="font-bold hover:underline">{m.vacancy}</Link><BandBadge band={m.band} />{m.hiddenGem && <GemBadge />}{m.application ? <Pill color="bg-slate-800 text-white">{m.application.source === 'applied' ? 'Applied' : 'Matched by recruiter'} · {m.application.status}</Pill> : <Pill color="bg-brand-50 text-brand-700">Did not apply</Pill>}</div>
                   <p className="text-sm mt-2">{m.explanation}</p>
                   <div className="text-xs mt-2 bg-emerald-50 text-emerald-800 rounded p-2"><b>Feedback the candidate receives:</b> {m.feedback}</div>
                   <DecisionBox candidateId={c.id} vacancyId={m.vacancyId} aiBand={m.band} onDone={reload} />
                 </div>
                 <div className="w-40 space-y-2">
-                  <div className="text-center"><div className="text-3xl font-extrabold text-indigo-600">{m.overall}%</div></div>
+                  <div className="text-center"><div className="text-3xl font-extrabold text-brand-600">{m.overall}%</div></div>
                   <Score label="Skill fit" value={m.skillFit} />
                   <Score label="Challenge" value={m.challenge} color="bg-fuchsia-500" />
                   <Score label="Keyword CV" value={m.cv} color="bg-slate-400" />

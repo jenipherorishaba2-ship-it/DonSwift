@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-const ACTIONS = [['shortlist', '✓ Shortlist', 'bg-emerald-600'], ['interview', '📅 Interview', 'bg-indigo-600'], ['hold', '⏸ Hold', 'bg-slate-500'], ['reject', '✕ Not selected', 'bg-red-600']];
+const ACTIONS = [['shortlist', '✓ Shortlist', 'bg-emerald-600'], ['interview', '📅 Interview', 'bg-brand-600'], ['hold', '⏸ Hold', 'bg-slate-500'], ['reject', '✕ Not selected', 'bg-red-600']];
 
 export default function DecisionBox({ candidateId, vacancyId, aiBand, onDone }) {
   const [action, setAction] = useState(null);

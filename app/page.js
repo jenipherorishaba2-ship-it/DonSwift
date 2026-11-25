@@ -20,12 +20,12 @@ export default function Dashboard() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Stat label="Applications" value={stats.applications} sub={`${stats.candidates} people in talent pool`} />
         <Stat label="Hidden Gems found" value={stats.hiddenGems} sub="Weak CV, strong proven skill" color="text-fuchsia-600" />
-        <Stat label="Cross-role matches" value={stats.crossMatches} sub="Strong fit for a job they didn't apply to" color="text-indigo-600" />
+        <Stat label="Cross-role matches" value={stats.crossMatches} sub="Strong fit for a job they didn't apply to" color="text-brand-600" />
         <Stat label="Questions auto-answered" value={stats.chats} sub="Calls the team didn't have to take" color="text-emerald-600" />
       </div>
 
       <div className="card">
-        <div className="flex justify-between items-center mb-3"><h2 className="font-bold text-lg">Vacancies by deadline</h2><Link href="/vacancies" className="text-sm text-indigo-600">+ Decode a new vacancy</Link></div>
+        <div className="flex justify-between items-center mb-3"><h2 className="font-bold text-lg">Vacancies by deadline</h2><Link href="/vacancies" className="text-sm text-brand-600">+ Decode a new vacancy</Link></div>
         <div className="divide-y">
           {data.vacancies.map((v) => (
             <Link key={v.id} href={`/vacancies/${v.id}`} className="flex items-center gap-4 py-3 hover:bg-slate-50 rounded-lg px-2">

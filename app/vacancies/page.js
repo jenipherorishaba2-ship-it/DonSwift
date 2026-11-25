@@ -39,7 +39,7 @@ export default function Vacancies() {
       {!data ? <Loading error={error} /> : (
         <div className="grid md:grid-cols-3 gap-4">
           {data.map((v) => (
-            <Link key={v.id} href={`/vacancies/${v.id}`} className="card hover:ring-2 ring-indigo-400">
+            <Link key={v.id} href={`/vacancies/${v.id}`} className="card hover:ring-2 ring-brand-400">
               <div className="flex justify-between items-start"><div className="font-bold">{v.title}</div><span className={`w-3 h-3 rounded-full ${RAG[v.rag.status]}`} /></div>
               <div className="text-xs text-slate-500">{v.client} · {v.location}</div>
               <div className="text-sm mt-3">{v.rag.days} days left · {RAGText[v.rag.status]} · {v.shortlisted}/{v.rag.need} shortlisted</div>
@@ -61,7 +61,7 @@ export default function Vacancies() {
               <div><label className="label">Deadline</label><input type="date" className="input" value={form.deadline} onChange={set('deadline')} /></div>
             </div>
             <div>
-              <div className="flex justify-between"><label className="label">Job description</label><button className="text-xs text-indigo-600" onClick={() => setForm({ ...form, title: form.title || 'Field Sales Officer', client: form.client || 'Jinja Distributors', deadline: form.deadline || new Date(Date.now() + 12 * 864e5).toISOString().slice(0, 10), description: SAMPLE })}>use sample</button></div>
+              <div className="flex justify-between"><label className="label">Job description</label><button className="text-xs text-brand-600" onClick={() => setForm({ ...form, title: form.title || 'Field Sales Officer', client: form.client || 'Jinja Distributors', deadline: form.deadline || new Date(Date.now() + 12 * 864e5).toISOString().slice(0, 10), description: SAMPLE })}>use sample</button></div>
               <textarea className="input h-56" value={form.description} onChange={set('description')} placeholder="Paste the job description here…" />
             </div>
             <button className="btn-primary" onClick={decode} disabled={!form.description}>Decode into blueprint →</button>

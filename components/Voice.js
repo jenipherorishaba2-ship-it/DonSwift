@@ -11,7 +11,7 @@ export function speak(text) {
 }
 
 export function SpeakButton({ text, className = '' }) {
-  return <button type="button" aria-label="Read aloud" title="Read aloud" onClick={() => speak(text)} className={`text-xs px-2 py-1 rounded-full bg-slate-100 hover:bg-indigo-100 ${className}`}>🔊</button>;
+  return <button type="button" aria-label="Read aloud" title="Read aloud" onClick={() => speak(text)} className={`text-xs px-2 py-1 rounded-full bg-slate-100 hover:bg-brand-100 ${className}`}>🔊</button>;
 }
 
 // Voice input: browser speech recognition (Chrome / Edge). Lets candidates who

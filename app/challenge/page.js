@@ -27,12 +27,12 @@ export default function Challenge() {
       </div>
       {ch && !result && (
         <div className="space-y-3">
-          <div className="card bg-indigo-50 border-indigo-200 text-sm"><b>Part B (done in person, scored by a recruiter):</b><ul className="list-disc pl-5">{ch.tasks.map((t) => <li key={t.task}>{t.task}</li>)}</ul></div>
+          <div className="card bg-brand-50 border-brand-200 text-sm"><b>Part B (done in person, scored by a recruiter):</b><ul className="list-disc pl-5">{ch.tasks.map((t) => <li key={t.task}>{t.task}</li>)}</ul></div>
           {ch.questions.map((q, i) => (
             <div key={q.id} className="card">
-              <div className="text-xs text-indigo-600 font-semibold">{q.skill}</div>
+              <div className="text-xs text-brand-600 font-semibold">{q.skill}</div>
               <div className="font-medium mb-2 flex gap-2 items-start"><span className="flex-1">{i + 1}. {q.q}</span><SpeakButton text={q.q + '. Options: ' + q.o.map((o, k) => (k + 1) + ', ' + o).join('. ')} /></div>
-              <div className="space-y-1">{q.o.map((o, j) => <label key={j} className={`flex gap-2 text-sm p-2 rounded-lg cursor-pointer ${ans[q.id] === j ? 'bg-indigo-100' : 'hover:bg-slate-50'}`}><input type="radio" name={q.id} checked={ans[q.id] === j} onChange={() => setAns({ ...ans, [q.id]: j })} />{o}</label>)}</div>
+              <div className="space-y-1">{q.o.map((o, j) => <label key={j} className={`flex gap-2 text-sm p-2 rounded-lg cursor-pointer ${ans[q.id] === j ? 'bg-brand-100' : 'hover:bg-slate-50'}`}><input type="radio" name={q.id} checked={ans[q.id] === j} onChange={() => setAns({ ...ans, [q.id]: j })} />{o}</label>)}</div>
             </div>
           ))}
           <button className="btn-primary" disabled={!cid} onClick={submit}>{cid ? 'Submit challenge' : 'Select who you are first'}</button>
