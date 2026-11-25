@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-slate-50 text-slate-800; }
+.card { @apply bg-white rounded-2xl shadow-sm border border-slate-200 p-5; }
+.btn { @apply inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-semibold transition; }
+.btn-primary { @apply btn bg-indigo-600 text-white hover:bg-indigo-700; }
+.btn-ghost { @apply btn bg-slate-100 text-slate-700 hover:bg-slate-200; }
+.input { @apply w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500; }
+.label { @apply block text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1; }
+h1 { @apply text-2xl font-bold text-slate-900; }
+
+/* ---------- Accessibility modes ---------- */
+html.a11y-large { font-size: 125%; }
+html.a11y-readable body, html.a11y-readable input, html.a11y-readable textarea, html.a11y-readable button, html.a11y-readable select {
+  font-family: Verdana, Tahoma, 'Trebuchet MS', sans-serif !important; letter-spacing: 0.04em; word-spacing: 0.12em; line-height: 1.7;
+}
+html.a11y-contrast body { background: #000 !important; color: #fff !important; }
+html.a11y-contrast .card, html.a11y-contrast main div[class*="bg-"], html.a11y-contrast input, html.a11y-contrast textarea, html.a11y-contrast select {
+  background: #000 !important; color: #fff !important; border-color: #ffeb3b !important;
+}
+html.a11y-contrast main *:not(svg) { color: #fff !important; }
+html.a11y-contrast a, html.a11y-contrast button { outline: 2px solid #ffeb3b; }
+*:focus-visible { outline: 3px solid #f59e0b !important; outline-offset: 2px; }
