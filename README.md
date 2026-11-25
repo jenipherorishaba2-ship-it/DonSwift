@@ -1,2 +1,2 @@
 # DonSwift
- This repository contains a system that solves a problem of job descriptions
+This repository contains a TalentLens AI is an intelligent and inclusive recruitment platform designed to help employers discover, assess, and match talented candidates with suitable job opportunities. It goes beyond traditional CV screening by evaluating practical skills, transferable abilities, experience, and potential. The platform uses AI-powered candidate matching, skills assessments, automated recruitment management, and human-led decision-making to promote fair, accessible, and efficient recruitment.
